@@ -7,6 +7,10 @@ VERIFY_TOKEN = "36412578"
 WHATSAPP_TOKEN = "EAAVwyNiGZADgBSmbA1Luh4C4OoGeYxH2GUfUdypPQQOYBGGVUYyzv4YlWGwS0z3yA1sQI5dTUW5lzzH7P5Jad3oiZAsn7klLzzsUzMM6g3IH2fnjdqSHqlxfUMnCyfToMvTDQkcKSS3DgqOTv6JZCPg571Yh214A2t7dN957lVukfqYqXSyKvN8q67EMzVknftcZBMAVYpS0KAIUgcPM9IHbxBqwgFfEQZBaTKarQMrk37FHA5GFK3h6K2BCuTKOx3jErd7R6NmJy1ZAjjbpJY"
 PHONE_NUMBER_ID ="1371235692729572"
 
+@app.route("/", methods=['GET'])
+def home():
+ return "Hello, World!"
+
 @app.route("/webhook", methods=['GET'])
 def verify_webhook():
     if request.args.get("hub.mode") == "subscribe" and request.args.get("hub.verify_token") == VERIFY_TOKEN:
